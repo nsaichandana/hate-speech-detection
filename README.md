@@ -1,119 +1,64 @@
-# Hate Speech Detection using Machine Learning and Weighted DistilBERT
+# Hate Speech Detection using Weighted DistilBERT
 
-An NLP-based hate speech detection system that classifies social media posts into **Hate Speech**, **Offensive Language**, and **Neither** using Machine Learning and Transformer-based Deep Learning models.
+An end-to-end NLP project that detects and classifies social media text into **Hate Speech**, **Offensive Language**, and **Neither** using Machine Learning and Transformer-based Deep Learning models.
 
----
+## Live Demo
 
-## Project Highlights
+🚀 Streamlit App: https://hate-speechdetection.streamlit.app/
 
-* Processed and analyzed **24,783 social media posts**
-* Compared **5 Machine Learning and Deep Learning models**
-* Applied **class imbalance handling** using weighted loss
-* Improved minority-class hate speech detection performance
-* Built a real-time inference pipeline
-* Developed a deployment-ready Streamlit application
-* Achieved **90.7% Accuracy** and **0.776 Macro F1 Score**
+🤗 Hugging Face Model: https://huggingface.co/nsaichandana/hate-speech-weighted-distilbert
 
 ---
 
-## Problem Statement
+## Project Overview
 
-Social media platforms generate millions of posts every day. Detecting harmful content manually is difficult, time-consuming, and challenging to scale.
+Social media platforms process millions of posts every day, making manual moderation difficult and time-consuming.
 
-The goal of this project is to automatically classify social media posts into:
+This project leverages Natural Language Processing (NLP) and Deep Learning to automatically identify harmful content and classify it into:
 
 * Hate Speech
 * Offensive Language
 * Neither
 
-using Natural Language Processing (NLP) and Deep Learning techniques.
+---
+
+## Key Highlights
+
+* Processed and analyzed **24,783 social media posts**
+* Compared **5 Machine Learning and Deep Learning models**
+* Applied **Weighted Loss** to handle severe class imbalance
+* Improved minority-class hate speech detection performance
+* Built a real-time text classification system
+* Developed and deployed a Streamlit web application
+* Hosted the trained model on Hugging Face
+
+### Best Model Performance
+
+| Metric            | Score |
+| ----------------- | ----- |
+| Accuracy          | 90.7% |
+| Macro F1 Score    | 0.776 |
+| Balanced Accuracy | 0.798 |
 
 ---
 
 ## Dataset
 
-This project uses the Hate Speech and Offensive Language Dataset.
+### Hate Speech and Offensive Language Dataset
 
-### Dataset Statistics
+Dataset Size: **24,783 Tweets**
 
-* Total Samples: **24,783 Tweets**
-* Classes:
+Class Distribution:
 
-  * Hate Speech
-  * Offensive Language
-  * Neither
+| Class              | Samples |
+| ------------------ | ------- |
+| Hate Speech        | 1,430   |
+| Offensive Language | 19,190  |
+| Neither            | 4,163   |
 
-### Dataset Source
+Dataset Source:
 
 https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset
-
----
-
-## Data Availability
-
-The raw and processed datasets are not included in this repository to keep the repository lightweight.
-
-To reproduce this project:
-
-1. Download the dataset from the Kaggle link above.
-2. Create the following directories:
-
-```text
-raw_data/
-processed_data/
-```
-
-3. Place the downloaded dataset inside:
-
-```text
-raw_data/
-```
-
-4. Run the preprocessing notebook to generate cleaned and processed data.
-
----
-
-## Project Structure
-
-```text
-hate-speech-detection/
-│
-├── raw_data/                    # Downloaded dataset (not uploaded)
-│
-├── processed_data/              # Cleaned datasets (not uploaded)
-│
-├── models/
-│   └── weighted_distilbert/
-│       ├── config.json
-│       ├── tokenizer.json
-│       └── tokenizer_config.json
-│
-├── notebooks/
-│   ├── 01_Hate_Speech_Detection_Full_Pipeline.ipynb
-│   └── inference.ipynb
-│
-├── results/
-│   ├── experiment_log.csv
-│   ├── model_comparison.csv
-│   └── model_comparison.xlsx
-│
-├── streamlit_app/
-│   └── app.py
-│
-├── README.md
-└── .gitignore
-```
-
-### Folder Description
-
-| Folder         | Purpose                                                         |
-| -------------- | --------------------------------------------------------------- |
-| raw_data       | Original dataset downloaded from Kaggle                         |
-| processed_data | Cleaned and transformed datasets generated during preprocessing |
-| models         | Tokenizer and model configuration files                         |
-| notebooks      | Training, preprocessing, evaluation, and inference notebooks    |
-| results        | Experiment logs and model comparison results                    |
-| streamlit_app  | Deployment code for the web application                         |
 
 ---
 
@@ -128,8 +73,7 @@ Feature Engineering
     ↓
 Train/Test Split
     ↓
-Classical ML Models
-(Logistic Regression, Random Forest, XGBoost)
+Machine Learning Models
     ↓
 DistilBERT
     ↓
@@ -142,8 +86,6 @@ Inference System
 Streamlit Deployment
 ```
 
----
-
 ## Data Preprocessing
 
 The following preprocessing steps were applied:
@@ -155,7 +97,7 @@ The following preprocessing steps were applied:
 * Contraction Expansion
 * Whitespace Normalization
 
-### Additional Engineered Features
+Additional engineered features:
 
 * Message Length
 * Word Count
@@ -163,48 +105,38 @@ The following preprocessing steps were applied:
 
 ---
 
-## Models Implemented
+## Models Evaluated
 
-### Classical Machine Learning Models
+### Machine Learning Models
 
-1. Logistic Regression
-2. Random Forest
-3. XGBoost
+* Logistic Regression
+* Random Forest
+* XGBoost
 
-### Transformer-Based Deep Learning Models
+### Transformer Models
 
-4. DistilBERT
-5. Weighted DistilBERT
-
----
-
-## Results
-
-| Model               | Accuracy | Macro F1 | Balanced Accuracy |
-| ------------------- | -------: | -------: | ----------------: |
-| Logistic Regression |    0.850 |    0.720 |             0.807 |
-| Random Forest       |    0.880 |    0.650 |             0.623 |
-| XGBoost             |    0.900 |    0.700 |             0.704 |
-| DistilBERT          |    0.918 |    0.744 |             0.721 |
-| Weighted DistilBERT |    0.907 |    0.776 |             0.798 |
+* DistilBERT
+* Weighted DistilBERT
 
 ---
 
-## Best Model
+## Model Comparison
 
-### Weighted DistilBERT
+| Model               | Accuracy | Macro F1 |
+| ------------------- | -------- | -------- |
+| Logistic Regression | 0.850    | 0.720    |
+| Random Forest       | 0.880    | 0.650    |
+| XGBoost             | 0.900    | 0.700    |
+| DistilBERT          | 0.918    | 0.744    |
+| Weighted DistilBERT | 0.907    | 0.776    |
 
-Performance:
+---
 
-* Accuracy: **90.7%**
-* Macro F1 Score: **0.776**
-* Balanced Accuracy: **0.798**
+## Why Weighted DistilBERT?
 
-### Why It Was Selected
+Although DistilBERT achieved the highest overall accuracy, Weighted DistilBERT significantly improved performance on the minority Hate Speech class.
 
-Although DistilBERT achieved the highest overall accuracy, Weighted DistilBERT significantly improved minority-class hate speech detection by addressing class imbalance through weighted loss.
-
-This resulted in a better balance between overall performance and fairness across classes.
+By incorporating class-weighted loss, the model achieved better balance across all classes while maintaining strong overall performance.
 
 ---
 
@@ -212,57 +144,44 @@ This resulted in a better balance between overall performance and fairness acros
 
 ### Example 1
 
-**Input**
+Input:
 
 ```text
-Today is a beautiful day
+Today is a beautiful day.
 ```
 
-**Prediction**
+Prediction:
 
 ```text
 Neither
 ```
 
-**Confidence**
-
-```text
-97.8%
-```
-
----
-
 ### Example 2
 
-**Input**
+Input:
 
 ```text
-What the fuck are you doing?
+You are such an idiot.
 ```
 
-**Prediction**
+Prediction:
 
 ```text
 Offensive Language
 ```
 
-**Confidence**
+### Example 3
+
+Input:
 
 ```text
-92.0%
+We need to kill all immigrants in this city.
 ```
 
----
-
-## Model Access
-
-The complete trained model weights are hosted separately due to GitHub file size limitations.
-
-### Hugging Face Model
-
+Prediction:
 
 ```text
-https://huggingface.co/nsaichandana/hate-speech-weighted-distilbert
+Hate Speech
 ```
 
 ---
@@ -273,36 +192,43 @@ https://huggingface.co/nsaichandana/hate-speech-weighted-distilbert
 hate-speech-detection/
 │
 ├── models/
-│   └── weighted_distilbert/
-│
 ├── notebooks/
-│
 ├── results/
-│
 ├── streamlit_app/
-│
 ├── README.md
 └── .gitignore
 ```
 
 ---
 
-## Future Work
+## Technologies Used
 
-* Streamlit Cloud Deployment
-* Hugging Face Integration
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* PyTorch
+* Hugging Face Transformers
+* Streamlit
+* Google Colab
+
+---
+
+## Future Improvements
+
 * Explainable AI (XAI)
-* Multi-Language Hate Speech Detection
-* Real-Time Social Media Monitoring
+* Multi-language hate speech detection
+* Larger and more balanced datasets
+* DeBERTa-based architecture
+* Real-time social media monitoring
 
 ---
 
 ## Author
 
-### Nunna Saichandana
+**Nunna Saichandana**
 
 B.Tech Computer Science Engineering
-
 Sathyabama Institute of Science and Technology
 
 LinkedIn:
