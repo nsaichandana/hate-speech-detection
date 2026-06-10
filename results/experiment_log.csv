@@ -1,0 +1,6 @@
+Experiment,Key Change,Best Metric
+Logistic Regression,TF-IDF + class weights,Balanced Accuracy 0.807
+Random Forest,TF-IDF,Accuracy 0.88
+XGBoost,TF-IDF,Accuracy 0.90
+DistilBERT,Transformer baseline,Accuracy 0.918
+Weighted DistilBERT,Transformer + class weighted loss,Hate F1 0.48

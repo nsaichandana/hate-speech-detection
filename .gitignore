@@ -1,0 +1,30 @@
+# Dataset files
+raw_data/
+processed_data/
+data/
+
+# Large model files
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
