@@ -7,6 +7,9 @@ An end-to-end NLP project that detects and classifies social media text into **H
 🚀 Streamlit App: https://hate-speechdetection.streamlit.app/
 
 🤗 Hugging Face Model: https://huggingface.co/nsaichandana/hate-speech-weighted-distilbert
+---
+
+<img width="1358" height="678" alt="image" src="https://github.com/user-attachments/assets/7f5e0bd8-8356-4fbe-a67d-83b3e339e216" />
 
 ---
 
